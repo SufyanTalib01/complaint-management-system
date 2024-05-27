@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Sidebar</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    background-color: #f0c14b; /* Yellow color */
+    width: 250px;
+    min-width: 250px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .sidebar .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+  }
+
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+      position: absolute;
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .content {
+      margin-left: 0;
+    }
+
+    .menu-toggle {
+      display: block;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+
+    .content {
+      margin-left: 250px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+  <div class="profile">
+    <img src="profile.jpg" alt="Profile Picture">
+    <h2>John Smith</h2>
+  </div>
+  <ul>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Account Setting</a></li>
+    <li><a href="#">Lodge Complain</a></li>
+    <li><a href="#">Complain History</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="menu-toggle" id="menu-toggle">☰ Menu</div>
+  <h1>Profile Info</h1>
+  <!-- Your profile info content here -->
+</div>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
