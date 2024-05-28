@@ -64,6 +64,7 @@
     flex-grow: 1;
     background-color: #F2F2F2;
     display: flex;
+    position: relative;
 
 }
 
@@ -75,6 +76,9 @@
     display: flex;
     background-color: #FFD777;
    flex-direction: column;
+
+   
+   
 
 
 }
@@ -209,7 +213,7 @@
 }
 
 .i-1 {
-    width: 290px;
+    width: 70%;
     height: 30px;
     padding-left: 7px;
     border: 1px solid gray;
@@ -217,7 +221,7 @@
 }
 
 .i-2 {
-    width: 290px;
+    width: 70%;
     height: 30px;
     padding-left: 7px;
     background-color: #EEEEEE;
@@ -235,7 +239,7 @@ p {
 /* INPUT 2-3 */
 
 .i-3 {
-    width: 290px;
+    width: 70%;
     height: 30px;
     padding-left: 7px;
     border: 1px solid gray;
@@ -243,12 +247,12 @@ p {
 }
 
 .i-4 {
-    width: 290px;
+    width: 70%;
     height: 50px;
     padding-left: 7px;
     border: 1px solid gray;
     border-radius: 3px;
-    padding: 7px;
+    padding-block: 14px;
 }
 
 /* FOOTER */
@@ -293,16 +297,18 @@ hr {
 
 #side-bar.active{ 
     min-width: 220px;
+  
  }
 
 
 
 /* TABLET MODE */
 
-@media (min-width: 501px) and (max-width: 891px) {
+@media (min-width: 655px) and (max-width: 1000px) {
     .slide-bar.active {
         position: absolute;
-        height: 123vh;
+        top: 0;
+        bottom: 0;
         z-index: 3;
        
     }
@@ -318,7 +324,7 @@ hr {
 
 /* MOBILE MODE  */
 
-@media (min-width: 379px) and (max-width: 500px) {
+@media (min-width: 379px) and (max-width: 654px) {
    
 
     /* NAVBAR  */
@@ -387,7 +393,9 @@ hr {
     }
  #side-bar.active{ 
     position: absolute;
-    height: 161.7vh;
+    /* height: 91%; */
+    top: 0px;
+    bottom: 0px;
     z-index: 2;
    
     }
@@ -405,7 +413,9 @@ hr {
 
    .slide-bar.active{
     position: absolute;
-    height: 205.3vh;
+    bottom: 0;
+    top: 0;
+    /* height: 145%; */
     z-index: 3;
    }
 
@@ -469,12 +479,14 @@ hr {
         width: 100%;
         margin-bottom: 20px;
         flex-direction: column;
+        align-items: flex-start;
       
     }
 
     .cont2 {
         width: 100%;
         flex-direction: column;
+        align-items: flex-start;
       
     }
 
